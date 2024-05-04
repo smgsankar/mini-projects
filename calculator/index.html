@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="icon.png" />
+    <script src="script.js" defer></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="calculator">
+        <header>
+          <h1>Calculator</h1>
+          <section id="content">
+            <p id="expression" class="expression"></p>
+            <h3 id="result" class="result"></h3>
+          </section>
+        </header>
+        <main>
+          <button data-input="Delete" class="input action">C</button>
+          <button data-input="/" class="input action">&#247;</button>
+          <button data-input="*" class="input action">X</button>
+          <button data-input="Backspace" class="input action">&#x232B;</button>
+          <button data-input="7" class="input value">7</button>
+          <button data-input="8" class="input value">8</button>
+          <button data-input="9" class="input value">9</button>
+          <button data-input="-" class="input action">&mdash;</button>
+          <button data-input="4" class="input value">4</button>
+          <button data-input="5" class="input value">5</button>
+          <button data-input="6" class="input value">6</button>
+          <button data-input="+" class="input action">+</button>
+          <button data-input="1" class="input value">1</button>
+          <button data-input="2" class="input value">2</button>
+          <button data-input="3" class="input value">3</button>
+          <button data-input="=" class="input action">=</button>
+          <button data-input="%" class="input action">%</button>
+          <button data-input="0" class="input value">0</button>
+          <button data-input="." class="input value">.</button>
+        </main>
+      </div>
+      <div id="history">
+        <section>
+          <h2>History</h2>
+          <button id="clear-history" class="hidden">Clear</button>
+        </section>
+        <div id="history-content">
+          <p>No calculations so far...</p>
+          <ol id="history-list"></ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
