@@ -23,6 +23,7 @@ body {
   --var-text-primary-color: #e7e7e7;
   --var-text-secondary-color: #333333;
   --var-text-tertiary-color: #4f4f4f;
+  --var-text-alternative-color: #b3b3b3;
   --var-card-bg-primary-color: #202024;
   --var-card-bg-secondary-color: #2e2e2e;
   --var-card-bg-tertiary-color: #0a0a0b;
@@ -204,4 +205,18 @@ h2 {
 
 .small-result {
   font-size: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  padding: 24px;
+  color: var(--var-text-alternative-color);
+}
+
+footer > p > a {
+  color: var(--var-primary-color);
 }
