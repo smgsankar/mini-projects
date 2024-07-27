@@ -19,7 +19,7 @@ export function Modal({ children, open, onClose }) {
 
   return (
     <dialog
-      className="focus-visible:outline-none"
+      className="focus-visible:outline-none rounded-xl"
       ref={dialogRef}
       onClick={backdropClick}
     >
