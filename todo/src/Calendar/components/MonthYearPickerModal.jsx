@@ -4,7 +4,14 @@ import { Modal } from "../../Common/components/Modal";
 import { ChevronLeft } from "../../icons/ChevronLeft";
 import { ChevronRight } from "../../icons/ChevronRight";
 import { getPickerModalTileDates, getPickerModalTitle } from "../helpers";
-import { addYears, startOfDecade, startOfYear, subYears } from "date-fns";
+import {
+  addYears,
+  isSameMonth,
+  isSameYear,
+  startOfDecade,
+  startOfYear,
+  subYears,
+} from "date-fns";
 
 export function MonthYearPickerModal({
   open,
@@ -56,9 +63,9 @@ export function MonthYearPickerModal({
 
   const isCurrentTile = (date) => {
     if (pickerState === "month") {
-      return date.getMonth() === targetDate.getMonth();
+      return isSameMonth(date, targetDate);
     }
-    return date.getFullYear() === targetDate.getFullYear();
+    return isSameYear(date, targetDate);
   };
 
   useEffect(() => {
