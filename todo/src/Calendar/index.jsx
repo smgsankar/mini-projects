@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { MonthYearPickerModal } from "./components/MonthYearPickerModal";
 import { DayHeaderRow } from "./components/DayHeaderRow";
 import { MonthDays } from "./components/MonthDays";
 import { Header } from "./components/Header";
 import { TODAY } from "./constants";
-import { Modal } from "../Common/components/Modal";
 
 export function Calendar() {
   const [targetDate, setTargetDate] = useState(TODAY);
@@ -28,10 +28,12 @@ export function Calendar() {
           </div>
         </div>
       </div>
-      <Modal open={pickerActive} onClose={togglePicker}>
-        Some dialog
-        <a onClick={togglePicker}>close</a>
-      </Modal>
+      <MonthYearPickerModal
+        open={pickerActive}
+        onClose={togglePicker}
+        targetDate={targetDate}
+        setTargetDate={setTargetDate}
+      />
     </>
   );
 }
