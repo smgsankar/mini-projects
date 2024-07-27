@@ -5,7 +5,7 @@ import { ChevronRight } from "../../icons/ChevronRight";
 import { getMonthAndYear } from "../helpers";
 import { ChevronDown } from "../../icons/ChevronDown";
 
-export function Header({ targetDate, setTargetDate }) {
+export function Header({ togglePicker, targetDate, setTargetDate }) {
   const handlePrevMonth = () => {
     const prevMonth = subMonths(targetDate, 1);
     setTargetDate(prevMonth);
@@ -27,7 +27,7 @@ export function Header({ targetDate, setTargetDate }) {
       >
         <ChevronLeft size={24} />
       </a>
-      <a type="button" className="flex items-end gap-1">
+      <a onClick={togglePicker} type="button" className="flex items-end gap-1">
         <span className="text-accent-white">{monthAndYear}</span>
         <span className="block lg:hidden text-accent-white p-0">
           <ChevronDown size={24} />
@@ -47,4 +47,5 @@ export function Header({ targetDate, setTargetDate }) {
 Header.propTypes = {
   targetDate: PropTypes.instanceOf(Date).isRequired,
   setTargetDate: PropTypes.func.isRequired,
+  togglePicker: PropTypes.func.isRequired,
 };
