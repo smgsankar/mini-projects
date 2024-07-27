@@ -8,7 +8,7 @@ export function MonthDayCell({ day, isCurrentMonth, isToday }) {
         isCurrentMonth ? "text-accent-white" : "text-accent-grey"
       } ${
         isToday ? "bg-accent-green" : ""
-      } hover:outline hover:outline-accent-green active:outline active:outline-accent-green`}
+      } hover:outline hover:outline-accent-grey active:outline active:outline-accent-grey`}
     >
       {day.getDate()}
     </div>
