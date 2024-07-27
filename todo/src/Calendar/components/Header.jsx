@@ -31,7 +31,7 @@ export function Header({ togglePicker, targetDate, setTargetDate, showToday }) {
       >
         <ChevronLeft size={24} />
       </a>
-      <div className="w-[100%] flex justify-between items-baseline">
+      <div className="max-lg:w-[100%] flex justify-between items-baseline">
         <a
           onClick={togglePicker}
           type="button"
