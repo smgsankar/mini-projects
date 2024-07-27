@@ -4,7 +4,7 @@ export function MonthDayCell({ day, isCurrentMonth, isToday }) {
   return (
     <div
       tabIndex={1}
-      className={`flex items-center justify-center rounded-xl p-2 ${
+      className={`w-cell h-cell flex items-center justify-center rounded-xl p-2 ${
         isCurrentMonth ? "text-accent-white" : "text-accent-grey"
       } ${
         isToday ? "bg-accent-green" : ""
