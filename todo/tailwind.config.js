@@ -15,10 +15,10 @@ export default {
         "accent-grey": "#7A887A",
       },
       width: {
-        cell: "clamp(44px, calc(32px + 3dvw), 56px)"
+        cell: "clamp(32px, calc(24px + 3dvw), 44px)"
       },
       height: {
-        cell: "clamp(44px, calc(32px + 3dvw), 56px)"
+        cell: "clamp(32px, calc(24px + 3dvw), 44px)"
       }
     },
   },

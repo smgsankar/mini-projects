@@ -19,7 +19,7 @@ export function Header({ targetDate, setTargetDate }) {
   const monthAndYear = getMonthAndYear(targetDate);
 
   return (
-    <div className="flex justify-between items-center font-bold text-xl px-[14px] lg:px-0">
+    <div className="flex justify-between items-center font-bold text-xl px-[18px] lg:px-[14px]">
       <a
         type="button"
         onClick={handlePrevMonth}
