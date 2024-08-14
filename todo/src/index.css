@@ -6,7 +6,7 @@ body {
   margin: 0;
   min-width: 100dvw;
   min-height: 100dvh;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 dialog::backdrop {
