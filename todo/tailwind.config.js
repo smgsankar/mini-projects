@@ -19,6 +19,9 @@ export default {
       },
       height: {
         cell: "clamp(32px, calc(24px + 3dvw), 44px)"
+      },
+      boxShadow: {
+        elevated: "0 10px 15px 10px rgb(0 0 0 / 0.2)"
       }
     },
   },
