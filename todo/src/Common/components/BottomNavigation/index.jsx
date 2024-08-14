@@ -32,9 +32,9 @@ export function BottomNavigation({ activeTab, setActiveTab }) {
   return (
     <div className="fixed bottom-0 shadow-elevated">
       <div className="flex flex-row justify-evenly w-[100dvw]">
-        {tabs.map((tab) => {
+        {tabs.map((tab, index) => {
           const { name, label, icon } = tab;
-          const isActive = activeTab === name;
+          const isActive = activeTab === index;
 
           return (
             <BottomNavigationAction
@@ -43,7 +43,7 @@ export function BottomNavigation({ activeTab, setActiveTab }) {
               icon={icon}
               label={label}
               isActive={isActive}
-              onClick={() => handleTabChange(name)}
+              onClick={() => handleTabChange(index)}
             />
           );
         })}
@@ -53,6 +53,6 @@ export function BottomNavigation({ activeTab, setActiveTab }) {
 }
 
 BottomNavigation.propTypes = {
-  activeTab: PropTypes.string,
+  activeTab: PropTypes.number,
   setActiveTab: PropTypes.func,
 };
