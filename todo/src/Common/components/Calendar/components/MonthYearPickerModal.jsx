@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { Modal } from "../../Common/components/Modal";
-import { ChevronLeft } from "../../icons/ChevronLeft";
-import { ChevronRight } from "../../icons/ChevronRight";
+import { Modal } from "../../Modal";
+import { ChevronLeft } from "../../../icons/ChevronLeft";
+import { ChevronRight } from "../../../icons/ChevronRight";
 import { getPickerModalTileDates, getPickerModalTitle } from "../helpers";
 import {
   addYears,

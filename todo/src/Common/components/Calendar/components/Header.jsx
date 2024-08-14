@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { addMonths, subMonths } from "date-fns";
-import { ChevronLeft } from "../../icons/ChevronLeft";
-import { ChevronRight } from "../../icons/ChevronRight";
+import { ChevronLeft } from "../../../icons/ChevronLeft";
+import { ChevronRight } from "../../../icons/ChevronRight";
 import { getMonthAndYear } from "../helpers";
-import { ChevronDown } from "../../icons/ChevronDown";
+import { ChevronDown } from "../../../icons/ChevronDown";
 
 export function Header({ togglePicker, targetDate, setTargetDate, showToday }) {
   const handlePrevMonth = () => {
