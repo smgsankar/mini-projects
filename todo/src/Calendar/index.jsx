@@ -16,18 +16,16 @@ export function Calendar() {
 
   return (
     <>
-      <div className="flex items-center justify-center h-[100dvh] w-[100dvw]">
-        <div className="flex flex-col gap-4">
-          <Header
-            showToday={!isSameMonth(targetDate, TODAY)}
-            togglePicker={togglePicker}
-            targetDate={targetDate}
-            setTargetDate={setTargetDate}
-          />
-          <div className="grid grid-cols-7">
-            <DayHeaderRow />
-            <MonthDays targetDate={targetDate} />
-          </div>
+      <div className="flex flex-col gap-4">
+        <Header
+          showToday={!isSameMonth(targetDate, TODAY)}
+          togglePicker={togglePicker}
+          targetDate={targetDate}
+          setTargetDate={setTargetDate}
+        />
+        <div className="grid grid-cols-7">
+          <DayHeaderRow />
+          <MonthDays targetDate={targetDate} />
         </div>
       </div>
       <MonthYearPickerModal
