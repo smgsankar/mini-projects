@@ -1,3 +1,6 @@
-export function Notes() {
-  return <div>Test Notes</div>;
+import { TabContent } from "../Common/components/TabContent";
+
+export function Notes({ active }) {
+  if (!active) return <TabContent />;
+  return <TabContent>Test Notes</TabContent>;
 }

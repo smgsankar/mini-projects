@@ -17,7 +17,7 @@ export function BottomNavigationAction({
     <div
       onClick={onTabClick}
       className={`transition-all ease-linear motion-reduce:transition-none p-6 flex flex-col items-center ${
-        isActive ? "flex-[1.05] bg-accent-green" : ""
+        isActive ? "bg-accent-green flex-[2.5]" : "flex-1"
       }`}
     >
       <div>

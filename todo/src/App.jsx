@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BottomNavigation } from "./Common/components/BottomNavigation";
 import { Home } from "./Home";
 import { Tasks } from "./Tasks";
@@ -6,6 +6,7 @@ import { Notes } from "./Notes";
 import { About } from "./About";
 
 export function App() {
+  const containerRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
   const touchStartXRef = useRef(-1);
 
@@ -37,27 +38,28 @@ export function App() {
     touchStartXRef.current = -1;
   };
 
-  const renderTab = () => {
-    switch (activeTab) {
-      case 1:
-        return <Tasks />;
-      case 2:
-        return <Notes />;
-      case 3:
-        return <About />;
-      default:
-        return <Home />;
-    }
-  };
+  useEffect(() => {
+    if (!containerRef.current) return;
+    containerRef.current.scrollTo({
+      left: activeTab * window.innerWidth,
+      behavior: "smooth",
+    });
+  }, [activeTab]);
 
   return (
-    <div
-      className="h-[100dvh] w-[100dvw]"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      {renderTab()}
+    <>
+      <div
+        ref={containerRef}
+        className="w-fill h-fill flex overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        <Home active={activeTab === 0} />
+        <Tasks active={activeTab === 1} />
+        <Notes active={activeTab === 2} />
+        <About active={activeTab === 3} />
+      </div>
       <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-    </div>
+    </>
   );
 }
