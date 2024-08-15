@@ -30,8 +30,8 @@ export function BottomNavigation({ activeTab, setActiveTab }) {
   };
 
   return (
-    <div className="fixed bottom-0 shadow-elevated">
-      <div className="flex flex-row justify-evenly w-[100dvw]">
+    <div className="fixed bottom-0 bg-white shadow-topElevated">
+      <div className="flex flex-row justify-evenly w-full">
         {tabs.map((tab, index) => {
           const { name, label, icon } = tab;
           const isActive = activeTab === index;
