@@ -11,11 +11,23 @@ export function App() {
   const [activeTab, setActiveTab] = useState(0);
   const touchStartXRef = useRef({ x: -1, y: -1 });
 
+  const updateActiveTabWithScroll = (tab) => {
+    if (typeof tab === "function") {
+      tab = tab(activeTab);
+    }
+    setActiveTab(tab);
+    if (!containerRef.current) return;
+    containerRef.current.scrollTo({
+      left: tab * window.innerWidth,
+      behavior: "smooth",
+    });
+  };
+
   const handleSwipe = (direction) => {
     if (direction === "left") {
-      setActiveTab((prevTab) => (prevTab + 1) % 4);
+      updateActiveTabWithScroll((prevTab) => (prevTab + 1) % 4);
     } else {
-      setActiveTab((prevTab) => (prevTab + 3) % 4);
+      updateActiveTabWithScroll((prevTab) => (prevTab + 3) % 4);
     }
   };
 
@@ -52,14 +64,6 @@ export function App() {
     };
   };
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-    containerRef.current.scrollTo({
-      left: activeTab * window.innerWidth,
-      behavior: "smooth",
-    });
-  }, [activeTab]);
-
   return (
     <div className="relative">
       <Topbar />
@@ -69,12 +73,18 @@ export function App() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        <Home active={activeTab === 0} />
+        <Home
+          active={activeTab === 0}
+          setActiveTab={updateActiveTabWithScroll}
+        />
         <Tasks active={activeTab === 1} />
         <Notes active={activeTab === 2} />
         <About active={activeTab === 3} />
       </div>
-      <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <BottomNavigation
+        activeTab={activeTab}
+        setActiveTab={updateActiveTabWithScroll}
+      />
     </div>
   );
 }
