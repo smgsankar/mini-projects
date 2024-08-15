@@ -1,6 +1,5 @@
 export function Topbar() {
   const handleClick = (e) => {
-    console.log("Clicked at topbar");
     e.stopPropagation();
   };
 
