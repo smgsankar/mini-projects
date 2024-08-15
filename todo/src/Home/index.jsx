@@ -1,5 +1,4 @@
 import { TabContent } from "../Common/components/TabContent";
-import { NoData } from "./components/NoData";
 import { SectionHeader } from "./components/SectionHeader";
 
 export function Home({ active, setActiveTab }) {
