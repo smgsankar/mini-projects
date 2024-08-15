@@ -16,14 +16,17 @@ export default {
       },
       width: {
         cell: "clamp(32px, calc(24px + 3dvw), 44px)",
-        fill: '100dvw',
+        full: '100dvw',
+        fill: '100%',
       },
       height: {
         cell: "clamp(32px, calc(24px + 3dvw), 44px)",
-        fill: '100dvh',
+        full: '100dvh',
+        fill: '100%',
       },
       boxShadow: {
-        elevated: "0 10px 15px 10px rgb(0 0 0 / 0.2)"
+        bottomElevated: "0 10px 15px -10px rgb(0 0 0 / 0.2)",
+        topElevated: "0 10px 15px 10px rgb(0 0 0 / 0.2)"
       }
     },
   },
