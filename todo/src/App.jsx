@@ -69,8 +69,6 @@ export function App() {
     };
   };
 
-  console.log("activeTab ==> ", activeTab);
-
   return (
     <AppStateProvider
       value={{
