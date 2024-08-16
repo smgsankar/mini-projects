@@ -1,15 +1,19 @@
 import { TabContent } from "../Common/components/TabContent";
 import { SectionHeader } from "./components/SectionHeader";
+import { tabIndices } from "../Common/utils/constants";
+import { useAppState } from "../Common/store";
 
-export function Home({ active, setActiveTab }) {
-  if (!active) return <TabContent />;
+export function Home() {
+  const { activeTab, setActiveTab } = useAppState();
+
+  if (activeTab !== tabIndices.home) return <TabContent />;
 
   const seeAllTasks = () => {
-    setActiveTab(1);
+    setActiveTab(tabIndices.tasks);
   };
 
   const seeAllNotes = () => {
-    setActiveTab(2);
+    setActiveTab(tabIndices.notes);
   };
 
   return (

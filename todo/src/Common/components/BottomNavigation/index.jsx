@@ -1,30 +1,9 @@
-import PropTypes from "prop-types";
+import { useAppState } from "../../store";
+import { tabs } from "../../utils/constants";
 import { BottomNavigationAction } from "./BottomNavigationAction";
 
-const tabs = [
-  {
-    name: "home",
-    label: "Home",
-    icon: "home",
-  },
-  {
-    name: "tasks",
-    label: "Tasks",
-    icon: "tasks",
-  },
-  {
-    name: "notes",
-    label: "Notes",
-    icon: "notes",
-  },
-  {
-    name: "about",
-    label: "About",
-    icon: "about",
-  },
-];
-
-export function BottomNavigation({ activeTab, setActiveTab }) {
+export function BottomNavigation() {
+  const { activeTab, setActiveTab } = useAppState();
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -51,8 +30,3 @@ export function BottomNavigation({ activeTab, setActiveTab }) {
     </div>
   );
 }
-
-BottomNavigation.propTypes = {
-  activeTab: PropTypes.number,
-  setActiveTab: PropTypes.func,
-};

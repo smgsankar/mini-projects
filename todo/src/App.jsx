@@ -1,15 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { BottomNavigation } from "./Common/components/BottomNavigation";
 import { Topbar } from "./Common/components/Topbar";
+import { AppStateProvider } from "./Common/store";
 import { Tasks } from "./Tasks";
 import { Notes } from "./Notes";
 import { About } from "./About";
 import { Home } from "./Home";
+import { tabIndices, themeOptions } from "./Common/utils/constants";
 
 export function App() {
   const containerRef = useRef(null);
-  const [activeTab, setActiveTab] = useState(0);
   const touchStartXRef = useRef({ x: -1, y: -1 });
+
+  const [theme, setTheme] = useState(themeOptions.light);
+  const [swipeEnabled, setSwipeEnabled] = useState(true);
+  const [activeTab, setActiveTab] = useState(tabIndices.home);
 
   const updateActiveTabWithScroll = (tab) => {
     if (typeof tab === "function") {
@@ -64,27 +69,34 @@ export function App() {
     };
   };
 
+  console.log("activeTab ==> ", activeTab);
+
   return (
-    <div className="relative">
-      <Topbar />
-      <div
-        ref={containerRef}
-        className="w-full h-full bg-gray-100 flex overflow-hidden pt-[72px] pb-24 relative"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <Home
-          active={activeTab === 0}
-          setActiveTab={updateActiveTabWithScroll}
-        />
-        <Tasks active={activeTab === 1} />
-        <Notes active={activeTab === 2} />
-        <About active={activeTab === 3} />
+    <AppStateProvider
+      value={{
+        activeTab,
+        setActiveTab: updateActiveTabWithScroll,
+        theme,
+        setTheme,
+        swipeEnabled,
+        setSwipeEnabled,
+      }}
+    >
+      <div className="relative">
+        <Topbar />
+        <div
+          ref={containerRef}
+          className="w-full h-full bg-gray-100 flex overflow-hidden pt-[72px] pb-24 relative"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <Home />
+          <Tasks />
+          <Notes />
+          <About />
+        </div>
+        <BottomNavigation />
       </div>
-      <BottomNavigation
-        activeTab={activeTab}
-        setActiveTab={updateActiveTabWithScroll}
-      />
-    </div>
+    </AppStateProvider>
   );
 }
