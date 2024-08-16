@@ -9,8 +9,8 @@ export function BottomNavigation() {
   };
 
   return (
-    <div className="fixed bottom-0 bg-white shadow-topElevated">
-      <div className="flex flex-row justify-evenly w-full">
+    <div className="fixed bottom-0 h-24 bg-white shadow-topElevated">
+      <div className="flex flex-row justify-evenly w-full h-fill">
         {tabs.map((tab, index) => {
           const { name, label, icon } = tab;
           const isActive = activeTab === index;
