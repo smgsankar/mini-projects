@@ -24,7 +24,7 @@ export function Header() {
               <a
                 target="_blank"
                 href="https://www.flaticon.com/authors/freepik"
-                className="font-semibold"
+                className="font-semibold underline decoration-[0.5px]"
                 title="Freepik"
               >
                 Flaticon by Freepik
