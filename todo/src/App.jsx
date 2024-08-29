@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BottomNavigation } from "./Common/components/BottomNavigation";
 import { Topbar } from "./Common/components/Topbar";
 import { AppStateProvider } from "./Common/store";
@@ -7,6 +7,7 @@ import { Notes } from "./Notes";
 import { About } from "./About";
 import { Home } from "./Home";
 import { tabIndices, themeOptions } from "./Common/utils/constants";
+import { initNotesDB } from "./Common/store/indexedDB";
 
 export function App() {
   const containerRef = useRef(null);
@@ -68,6 +69,10 @@ export function App() {
       y: -1,
     };
   };
+
+  useEffect(() => {
+    initNotesDB();
+  }, []);
 
   return (
     <AppStateProvider
