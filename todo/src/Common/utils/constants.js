@@ -50,3 +50,24 @@ export const socialLinks = [
     icon: "ig.png",
   },
 ]
+
+export const colorOptions = [
+  "red",
+  "purple",
+  "amber",
+  "teal",
+];
+
+export const colorBgMap = {
+  red: "bg-red-500",
+  purple: "bg-purple-600",
+  amber: "bg-amber-400",
+  teal: "bg-teal-500",
+};
+
+export const colorOutlineMap = {
+  red: "outline-red-500",
+  purple: "outline-purple-600",
+  amber: "outline-amber-400",
+  teal: "outline-teal-500",
+};
