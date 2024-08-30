@@ -20,7 +20,7 @@ export function Notes() {
   const onBack = () => setTabState("list");
 
   return (
-    <TabContent>
+    <TabContent noPadding>
       {tabState === "list" && (
         <>
           <List />

@@ -41,7 +41,7 @@ export function Create({ onBack }) {
   return (
     <div
       onTouchStart={preventSwipe}
-      className="h-fill w-fill flex flex-col gap-4"
+      className="h-fill w-fill flex flex-col gap-4 px-4 py-5"
     >
       <div className="flex items-center gap-1">
         <button onClick={onBack} className="pt-[4px]">

@@ -64,10 +64,3 @@ export const colorBgMap = {
   amber: "bg-amber-400",
   teal: "bg-teal-500",
 };
-
-export const colorOutlineMap = {
-  red: "outline-red-500",
-  purple: "outline-purple-600",
-  amber: "outline-amber-400",
-  teal: "outline-teal-500",
-};
