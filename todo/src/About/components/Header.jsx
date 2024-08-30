@@ -1,9 +1,8 @@
-import { Card } from "../../Common/components/Card";
 import { SocialIcons } from "./SocialIcons";
 
 export function Header() {
   return (
-    <Card>
+    <div className="rounded-2xl bg-white p-4 shadow-lg">
       <div className="h-[25dvh] flex flex-col justify-center items-center py-6 gap-6">
         <SocialIcons />
         <div className="flex flex-col gap-2 text-center text-accent-grey">
@@ -33,6 +32,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
