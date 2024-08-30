@@ -13,6 +13,13 @@ export default {
         "accent-white": "#f5f5f5",
         "accent-black": "#1b1b1b",
         "accent-grey": "#7A887A",
+
+        // main colors
+        'text': 'var(--text)',
+        'background': 'var(--background)',
+        'primary': 'var(--primary)',
+        'secondary': 'var(--secondary)',
+        'accent': 'var(--accent)',
       },
       width: {
         cell: "clamp(32px, calc(24px + 3dvw), 44px)",

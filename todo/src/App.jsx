@@ -89,7 +89,7 @@ export function App() {
         <Topbar />
         <div
           ref={containerRef}
-          className="w-full h-full bg-gray-100 flex overflow-hidden pt-[72px] pb-24 relative"
+          className="w-full h-full bg-background flex overflow-hidden pt-[72px] pb-24 relative"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

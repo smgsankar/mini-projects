@@ -74,7 +74,7 @@ export function Create({ onBack }) {
         />
         <button
           type="submit"
-          className="bg-amber-800 rounded-lg font-semibold text-white py-2"
+          className="bg-accent rounded-lg font-semibold text-white py-2"
         >
           Create
         </button>

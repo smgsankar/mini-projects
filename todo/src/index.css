@@ -2,12 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --text: #0e1b11;
+    --background: #eef6f0;
+    --primary: #32623d;
+    --secondary: #8dc3b2;
+    --accent: #509b93;
+  }
+
+  .dark {
+    --text: #e4f1e7;
+    --background: #09110b;
+    --primary: #9dcda8;
+    --secondary: #3c7261;
+    --accent: #64afa8;
+  }
+}
+
 body {
   margin: 0;
   min-width: 100dvw;
   min-height: 100dvh;
   overflow: hidden;
-  background-color: #F3F4F6;
 }
 
 dialog::backdrop {
