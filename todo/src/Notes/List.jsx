@@ -15,7 +15,7 @@ function NoteCard({ note }) {
         } rounded-t-xl`}
       />
       <h2 className="font-semibold text-xl">{ellipsizeText(note.title, 16)}</h2>
-      <p className="overflow-hidden whitespace-pre-line line-clamp-5 h-[calc(100%-32px)]">
+      <p className="overflow-hidden whitespace-pre-line line-clamp-5 break-words h-[calc(100%-32px)]">
         {note.content}
       </p>
     </li>
@@ -46,7 +46,7 @@ export function List() {
       ) : (
         <div className="flex flex-col gap-5 py-5">
           <h1 className="text-3xl font-semibold px-4">Your notes</h1>
-          <ul className="grid grid-cols-2 gap-4 px-4 pb-5 h-[calc(100dvh-250px)] overflow-auto no-scrollbar">
+          <ul className="grid grid-cols-2 gap-4 px-4 pb-5 overflow-auto no-scrollbar">
             {notes.map((note) => (
               <NoteCard key={note.id} note={note} />
             ))}
